@@ -1,7 +1,12 @@
 import { ReactNode } from 'react';
 import { IconBaseProps } from 'react-icons/lib';
 
-
+interface WeatherForecast {
+  maxTemp: number;
+  minTemp: number;
+  iconName: string;
+  rainChanse: number;
+}
 
 interface CurrentWeatherData {
   temp: string;
@@ -14,10 +19,9 @@ interface IconProp {
 }
 
 interface WeatherByHourData {
-  hour:string;
+  hour: string;
   iconName: string;
 }
-
 
 // chart prop type
 interface ChartDataset {
@@ -63,6 +67,8 @@ interface DailyWeatherData {
   uv_index_max: Array<number>;
   precipitation_probability_max: Array<number>;
   windspeed_10m_max: Array<number>;
+  temperature_2m_max: Array<number>;
+  temperature_2m_min: Array<number>;
 }
 
 interface DecodedWeather {
@@ -75,4 +81,15 @@ interface typesPropsIcon {
   propsIcon?: IconBaseProps;
 }
 
-export type { WeatherData, GeoData, OverviewElement, ChartDataset, DecodedWeather, typesPropsIcon, WeatherByHourData, IconProp, CurrentWeatherData};
+export type {
+  WeatherData,
+  GeoData,
+  OverviewElement,
+  ChartDataset,
+  DecodedWeather,
+  typesPropsIcon,
+  WeatherByHourData,
+  IconProp,
+  CurrentWeatherData,
+  WeatherForecast,
+};

@@ -3,9 +3,10 @@ import { useLazyGetWeatherForecastQuery } from '../../slices/weatherSlice';
 import { CurrentWeather } from './CurrentWeather';
 import { RightHeader } from './RightHeader';
 import { WeatherHours } from './WeatherHours';
-import { CurrentWeatherData, WeatherByHourData } from '../../types';
+import { CurrentWeatherData, WeatherByHourData, WeatherForecast } from '../../types';
 import { useAppSelector } from '../../hooks';
 import { WeatherHelper } from '../../utils/weatherHelper';
+import Forecast from './Forecast';
 
 const RightPanel = () => {
     const { latitude, longitude } = useAppSelector(state => state.location);
@@ -15,6 +16,7 @@ const RightPanel = () => {
         temp: '',
     });
     const [weatherByHour, setWeatherByHour] = useState<WeatherByHourData[]>([])
+    const [weatherForecast, setWeatherForecast] = useState<WeatherForecast[]>([])
 
     const [getWeatherDataTrigger, { isLoading }] = useLazyGetWeatherForecastQuery();
 
@@ -43,6 +45,17 @@ const RightPanel = () => {
                 const iconName = WeatherHelper.getWeatherByCode(data.hourly.weathercode[i])?.iconName;
                 setWeatherByHour(current => [...current, {hour: `${hour}`, iconName: iconName ? iconName : 'AiOutlineQuestionCircle'}]);
             }
+            setWeatherForecast([])
+            for (let i = 0; i < data.daily.time.length; i++) {
+                const icon = WeatherHelper.getWeatherByCode(data.daily.weathercode[i])?.iconName;
+                const weather: WeatherForecast = {
+                    maxTemp: data.daily.temperature_2m_max[i],
+                    minTemp: data.daily.temperature_2m_min[i],
+                    iconName: icon ? icon : 'AiOutlineQuestionCircle',
+                    rainChanse: data.daily.precipitation_probability_max[i],
+                }
+                setWeatherForecast(current => [...current, weather]);
+            }
         };
         getData();
     }, [latitude, longitude]);
@@ -51,6 +64,7 @@ const RightPanel = () => {
             <RightHeader />
             <CurrentWeather {...currentWeather} />
             <WeatherHours weatherArr={weatherByHour}/>
+            <Forecast forecastArr={weatherForecast}/>
         </div>
     );
 };

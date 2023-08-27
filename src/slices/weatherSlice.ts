@@ -7,7 +7,7 @@ export const openMeteoApi = createApi({
   endpoints: builder => ({
     getWeatherForecast: builder.query<WeatherData, GeoData>({
       query: data =>
-        `forecast?latitude=${data.lat}&longitude=${data.lon}&hourly=temperature_2m,weathercode,surface_pressure&daily=weathercode,sunrise,sunset,uv_index_max,precipitation_probability_max,windspeed_10m_max&timezone=auto&past_days=1`,
+        `forecast?latitude=${data.lat}&longitude=${data.lon}&hourly=temperature_2m,weathercode,surface_pressure&daily=weathercode,sunrise,sunset,uv_index_max,precipitation_probability_max,windspeed_10m_max,temperature_2m_max,temperature_2m_min&timezone=auto&past_days=1`,
     }),
   }),
 });
