@@ -1,9 +1,9 @@
 import WeatherStat from './WeatherStat';
 import Chart from './Chart';
-import { useAppSelector } from '../hooks';
+import { useAppSelector } from '../../hooks';
 import { useEffect, useState } from 'react';
-import { ChartDataset, OverviewElement } from '../types';
-import { useLazyGetWeatherForecastQuery } from '../slices/weatherSlice';
+import { ChartDataset, OverviewElement } from '../../types';
+import { useLazyGetWeatherForecastQuery } from '../../slices/weatherSlice';
 import { LuArrowBigDown, LuCloudRainWind, LuSun, LuWind } from 'react-icons/lu';
 
 const Overview = () => {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useAppSelector } from '../hooks';
+import { useAppSelector } from '../../hooks';
 
 export const RightHeader = () => {
   const [currentTime, setCurrentTime] = useState<string>('');

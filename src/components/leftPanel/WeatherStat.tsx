@@ -1,4 +1,4 @@
-import { OverviewElement } from '../types';
+import { OverviewElement } from '../../types';
 const WeatherStat = ({ statName, current, diff, unit, icon }: OverviewElement) => {
     return (
         <div className="flex w-1/4 bg-gray-100 w-full p-5 rounded-xl gap-x-3">

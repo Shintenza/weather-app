@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../hooks';
-import { useGetLocationInfoByNameMutation } from '../slices/cityNameSlice';
-import { setLocation } from '../slices/locationSlice';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { useGetLocationInfoByNameMutation } from '../../slices/cityNameSlice';
+import { setLocation } from '../../slices/locationSlice';
 
 const Header = () => {
     const today = new Date();

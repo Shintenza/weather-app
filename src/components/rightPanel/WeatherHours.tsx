@@ -1,6 +1,6 @@
 import { WeatherStatHour } from './WeatherStatHour';
-import { WeatherByHourData } from '../types';
-import { WeatherHelper } from '../utils/weatherHelper';
+import { WeatherByHourData } from '../../types';
+import { WeatherHelper } from '../../utils/weatherHelper';
 
 export const WeatherHours: React.FC<{ weatherArr: WeatherByHourData[] }> = ({ weatherArr }) => {
   return (

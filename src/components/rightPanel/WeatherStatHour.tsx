@@ -1,5 +1,5 @@
-import { WeatherByHourData } from '../types';
-import { Icon } from './Icon';
+import { WeatherByHourData } from '../../types';
+import { Icon } from '../Icon';
 
 export const WeatherStatHour = ({ hour, iconName }: WeatherByHourData) => {
   return (

@@ -1,5 +1,5 @@
-import LeftPanel from './components/LeftPanel';
-import RightPanel from './components/RightPanel';
+import LeftPanel from './components/leftPanel/LeftPanel';
+import RightPanel from './components/rightPanel/RightPanel';
 import { useEffect } from 'react';
 import { setLocation, setLocationAvailability } from './slices/locationSlice';
 import { useGetLocationNameByCordsMutation } from './slices/cityNameSlice';

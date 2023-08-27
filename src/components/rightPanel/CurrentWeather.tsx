@@ -1,5 +1,5 @@
-import { Icon } from './Icon';
-import { CurrentWeatherData } from '../types';
+import { Icon } from './../Icon';
+import { CurrentWeatherData } from '../../types';
 
 export const CurrentWeather = ({ temp, description, iconName }: CurrentWeatherData) => {
   return (

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useLazyGetWeatherForecastQuery } from '../slices/weatherSlice';
+import { useLazyGetWeatherForecastQuery } from '../../slices/weatherSlice';
 import { CurrentWeather } from './CurrentWeather';
 import { RightHeader } from './RightHeader';
 import { WeatherHours } from './WeatherHours';
-import { CurrentWeatherData, WeatherByHourData } from '../types';
-import { useAppSelector } from '../hooks';
-import { WeatherHelper } from '../utils/weatherHelper';
+import { CurrentWeatherData, WeatherByHourData } from '../../types';
+import { useAppSelector } from '../../hooks';
+import { WeatherHelper } from '../../utils/weatherHelper';
 
 const RightPanel = () => {
     const { latitude, longitude } = useAppSelector(state => state.location);
