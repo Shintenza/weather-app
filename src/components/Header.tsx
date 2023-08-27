@@ -31,11 +31,14 @@ const Header = () => {
                 return;
             }
             const data = fetchedData[0];
+            const splittedDisplayName = data.display_name.split(',');
             dispatch(
                 setLocation({
                     latitude: data.lat,
                     longitude: data.lon,
-                    city: data.display_name.split(',')[0],
+                    city: splittedDisplayName[0],
+                    region: splittedDisplayName[1].trim(),
+                    country: splittedDisplayName[splittedDisplayName.length - 1].trim(),
                     isAvaliable: true,
                     manuallyChanged: true
                 })

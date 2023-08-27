@@ -1,4 +1,23 @@
 import { ReactNode } from 'react';
+import { IconBaseProps } from 'react-icons/lib';
+
+
+
+interface CurrentWeatherData {
+  temp: string;
+  description: string;
+  iconName: string;
+}
+
+interface IconProp {
+  name: string;
+}
+
+interface WeatherByHourData {
+  hour:string;
+  iconName: string;
+}
+
 
 // chart prop type
 interface ChartDataset {
@@ -46,4 +65,14 @@ interface DailyWeatherData {
   windspeed_10m_max: Array<number>;
 }
 
-export type { WeatherData, GeoData, OverviewElement, ChartDataset };
+interface DecodedWeather {
+  description: string;
+  iconName: string;
+}
+
+interface typesPropsIcon {
+  nameIcon: string;
+  propsIcon?: IconBaseProps;
+}
+
+export type { WeatherData, GeoData, OverviewElement, ChartDataset, DecodedWeather, typesPropsIcon, WeatherByHourData, IconProp, CurrentWeatherData};

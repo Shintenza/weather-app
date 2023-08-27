@@ -27,7 +27,9 @@ const App = () => {
                                 setLocation({
                                     latitude: lat,
                                     longitude: lon,
-                                    city: data.address.town,
+                                    city: data.address.town ? data.address.town : data.address.village,
+                                    region: data.location.municipality ? data.location.municipality : data.location.county,
+                                    country: data.address.country,
                                     isAvaliable: true,
                                     manuallyChanged: false,
                                 })
