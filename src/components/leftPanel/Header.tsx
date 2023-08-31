@@ -44,7 +44,7 @@ const Header = () => {
                 })
             );
         } catch (error) {
-            console.log('chuj');
+            console.log('error');
         }
 
         setLocationState('');
@@ -61,7 +61,7 @@ const Header = () => {
                 </p>
             </div>
             <div className="flex items-center">
-                <form onSubmit={handleLocationSubmit}>
+                <form onSubmit={handleLocationSubmit} className="w-full">
                     <input
                         type="text"
                         id="location"

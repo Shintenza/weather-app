@@ -45,8 +45,8 @@ const Chart = ({ labels, data, name }: ChartDataset) => {
             {
                 label: name,
                 data,
-                borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: '#3B82F6',
+                backgroundColor: '#3B82F6',
             },
         ],
     };

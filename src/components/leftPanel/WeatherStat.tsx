@@ -1,3 +1,4 @@
+import { BiSolidUpArrow, BiSolidDownArrow } from 'react-icons/bi';
 import { OverviewElement } from '../../types';
 const WeatherStat = ({ statName, current, diff, unit, icon }: OverviewElement) => {
     return (
@@ -9,9 +10,12 @@ const WeatherStat = ({ statName, current, diff, unit, icon }: OverviewElement) =
                     <h1 className="text-2xl block">
                         {current} {unit}
                     </h1>
-                    <p className="text-gray-400 block">
-                        {diff} {unit}
-                    </p>
+                    <div className="flex flex-row items-center gap-x-1">
+                        {diff > 0 ? <BiSolidUpArrow className="text-green-600"/> : <BiSolidDownArrow className="text-red-600"/>}
+                        <p className="text-gray-400 block">
+                            {Math.abs(diff)} {unit}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
