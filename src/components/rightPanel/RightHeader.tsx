@@ -5,13 +5,16 @@ export const RightHeader = () => {
   const [currentTime, setCurrentTime] = useState<string>('');
   const { city, region, country } = useAppSelector(state => state.location);
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       const today = new Date();
       let hour = today.getHours();
       let minutes = today.getMinutes();
       const time = `${hour < 10 ? '0' + hour : hour}:${minutes < 10 ? '0' + minutes : minutes}`;
       setCurrentTime(time);
     }, 30);
+    return ()=> {
+      clearInterval(interval);
+    }
   }, []);
   return (
     <div className="flex justify-between items-center pb-10 pt-4">
