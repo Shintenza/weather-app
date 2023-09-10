@@ -28,13 +28,13 @@ const App = () => {
                                     latitude: lat,
                                     longitude: lon,
                                     city: data.address.town ? data.address.town : data.address.village,
-                                    region: data.location.municipality ? data.location.municipality : data.location.county,
+                                    region: data.address.municipality ? data.address.municipality : data.address.county,
                                     country: data.address.country,
                                     isAvaliable: true,
                                     manuallyChanged: false,
                                 })
                             );
-                        } catch {
+                        } catch (error) {
                             dispatch(setLocationAvailability(false));
                         }
                     },
