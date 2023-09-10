@@ -38,7 +38,7 @@ const App = () => {
                             dispatch(setLocationAvailability(false));
                         }
                     },
-                    error => {
+                    () => {
                         dispatch(setLocationAvailability(false));
                     }
                 );

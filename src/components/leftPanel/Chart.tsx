@@ -26,7 +26,7 @@ const options = {
     plugins: {
         tooltip: {
             callbacks: {
-                label: item => `${item.dataset.label}: ${item.formattedValue} °C`,
+                label: (item:any) => `${item.dataset.label}: ${item.formattedValue} °C`,
             },
         },
         legend: {

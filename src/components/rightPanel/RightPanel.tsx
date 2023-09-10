@@ -18,7 +18,7 @@ const RightPanel = () => {
     const [weatherByHour, setWeatherByHour] = useState<WeatherByHourData[]>([])
     const [weatherForecast, setWeatherForecast] = useState<WeatherForecast[]>([])
 
-    const [getWeatherDataTrigger, { isLoading }] = useLazyGetWeatherForecastQuery();
+    const [getWeatherDataTrigger] = useLazyGetWeatherForecastQuery();
 
     useEffect(() => {
         const getData = async () => {

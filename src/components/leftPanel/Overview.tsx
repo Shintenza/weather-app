@@ -8,9 +8,9 @@ import { LuArrowBigDown, LuCloudRainWind, LuSun, LuWind } from 'react-icons/lu';
 
 const Overview = () => {
     const { latitude, longitude } = useAppSelector(state => state.location);
-    const [getWeatherDataTrigger, { isLoading }] = useLazyGetWeatherForecastQuery();
+    const [getWeatherDataTrigger] = useLazyGetWeatherForecastQuery();
     const [weatherStats, setWetherStats] = useState<OverviewElement[]>([]);
-    const [chartDataset, setChartDataset] = useState<ChartDataset>();
+    const [chartDataset, setChartDataset] = useState<ChartDataset>({name: "", labels: [], data: []});
 
     useEffect(() => {
         const setWeatherState = async () => {
